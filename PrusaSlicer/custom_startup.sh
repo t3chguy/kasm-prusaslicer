@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -ex
-START_COMMAND="/opt/PrusaSlicer/bin/prusa-slicer"
+START_COMMAND="/opt/PrusaSlicer/prusa-slicer"
 PGREP="prusa-slicer"
 export MAXIMIZE="true"
 export MAXIMIZE_NAME="PrusaSlicer"
