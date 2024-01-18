@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 set -ex
 
-if [ "${ARCH}" == "arm64" ] ; then
-  wget -q https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.7.1/PrusaSlicer-2.7.1+linux-arm64-GTK3-202312130749.tar.bz2 -O /tmp/prusaslicer.tgz
-else
-  wget -q https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.7.1/PrusaSlicer-2.7.1+linux-x64-GTK3-202312121425.tar.bz2 -O /tmp/prusaslicer.tgz
-fi
+curl -SsL https://api.github.com/repos/prusa3d/PrusaSlicer/releases/latest > $TMPDIR/latest.json
+
+declare -A ARCH_MAP=( ["amd64"]="x64" ["arm64"]="arm64")
+URL=$(curl -SsL https://api.github.com/repos/prusa3d/PrusaSlicer/releases/latest | \
+  jq --arg arch "${ARCH_MAP[$(arch)]}" \
+  -r '.assets[] | select(.browser_download_url | test("linux-\( $arch )-GTK3.+.tar.bz2$"))| .browser_download_url')
+wget -q "$URL" -O /tmp/prusaslicer.tgz
 
 tar -xvf /tmp/prusaslicer.tgz -C /opt/
 mv /opt/PrusaSlicer-* /opt/PrusaSlicer
