@@ -1,5 +1,4 @@
 FROM lscr.io/linuxserver/webtop:ubuntu-kde
-USER root
 
 ENV HOME /home/abc
 ENV STARTUPDIR /dockerstartup
@@ -15,5 +14,3 @@ RUN bash $INST_SCRIPTS/prusaslicer/install.sh && rm -rf $INST_SCRIPTS/prusaslice
 
 # Set this so that it doesn't complain about the CA cert path on every startup
 ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
-
-USER 1000
