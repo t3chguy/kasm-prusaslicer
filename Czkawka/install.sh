@@ -2,9 +2,9 @@
 set -ex
 
 # download
-RUN curl --location https://github.com/qarmin/czkawka/releases/download/6.1.0/linux_czkawka_gui --output /usr/bin/linux_czkawka_gui
+curl --location https://github.com/qarmin/czkawka/releases/download/6.1.0/linux_czkawka_gui --output /usr/bin/linux_czkawka_gui
 # mark as executable
-RUN chmod +x /usr/bin/linux_czkawka_gui
+chmod +x /usr/bin/linux_czkawka_gui
 
 wget -q https://raw.githubusercontent.com/qarmin/czkawka/master/snap/gui/czkawka.png -O /opt/czkawka_icon.png
 
