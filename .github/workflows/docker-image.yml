@@ -1,13 +1,10 @@
-name: BambuStudio Docker Image CI
+name: Build Docker image
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   schedule:
-  # cron job to trigger the build weekly
-    - cron:  '0 0 * * 1'
+    - cron:  '0 0 * * *' # daily
 
 jobs:
 
