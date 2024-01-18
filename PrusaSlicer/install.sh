@@ -25,7 +25,7 @@ StartupWMClass=PrusaSlicerDesktop
 Type=Application
 EOL
 chmod +x /usr/share/applications/prusaslicer.desktop
-mkdir /home/kasm-user/Desktop
-cp /usr/share/applications/prusaslicer.desktop /home/kasm-user/Desktop/prusaslicer.desktop
+mkdir /config/Desktop
+cp /usr/share/applications/prusaslicer.desktop /config/Desktop/prusaslicer.desktop
 
-chown 1000:0 /home/kasm-user/Desktop/prusaslicer.desktop
+chown 1000:0 /config/Desktop/prusaslicer.desktop
