@@ -6,10 +6,9 @@ ENV INST_SCRIPTS $STARTUPDIR/install
 ######### Customize Container Here ###########
 
 RUN apt-get -y update && apt-get -y install wget bzip2 htop qdirstat libgtk-4-dev ffmpeg curl krusader
-# download
-RUN curl --location https://github.com/qarmin/czkawka/releases/download/6.1.0/linux_czkawka_gui --output ~/.local/bin/linux_czkawka_gui
-# mark as executable
-RUN chmod +x ~/.local/bin/linux_czkawka_gui
+
+COPY Czkawka $INST_SCRIPTS/czkawka/
+RUN bash $INST_SCRIPTS/czkawka/install.sh && rm -rf $INST_SCRIPTS/czkawka/
 
 COPY PrusaSlicer $INST_SCRIPTS/prusaslicer/
 RUN bash $INST_SCRIPTS/prusaslicer/install.sh && rm -rf $INST_SCRIPTS/prusaslicer/
