@@ -2,9 +2,9 @@
 set -ex
 
 if [ "${ARCH}" == "arm64" ] ; then
-  wget -q https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.7.1/PrusaSlicer-2.7.1+linux-armv7l-GTK2-202312121430.tar.bz2 -O /tmp/prusaslicer.tgz
+  wget -q https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.7.1/PrusaSlicer-2.7.1+linux-arm64-GTK3-202312130749.tar.bz2 -O /tmp/prusaslicer.tgz
 else
-  wget -q https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.7.1/PrusaSlicer-2.7.1+linux-x64-GTK2-202312121451.tar.bz2 -O /tmp/prusaslicer.tgz
+  wget -q https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.7.1/PrusaSlicer-2.7.1+linux-x64-GTK3-202312121425.tar.bz2 -O /tmp/prusaslicer.tgz
 fi
 
 tar -xvf /tmp/prusaslicer.tgz -C /opt/
