@@ -1,4 +1,4 @@
-FROM lscr.io/linuxserver/webtop:latest
+FROM lscr.io/linuxserver/webtop:ubuntu-kde
 USER root
 
 ENV HOME /home/abc
