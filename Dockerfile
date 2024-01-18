@@ -1,9 +1,7 @@
 FROM lscr.io/linuxserver/webtop:ubuntu-kde
 
-ENV HOME /home/abc
 ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $STARTUPDIR/install
-WORKDIR $HOME
 
 ######### Customize Container Here ###########
 
