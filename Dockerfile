@@ -8,6 +8,8 @@ WORKDIR $HOME
 
 ######### Customize Container Here ###########
 
+RUN apt-get -y update && apt-get -y install wget
+
 COPY PrusaSlicer $INST_SCRIPTS/prusaslicer/
 RUN bash $INST_SCRIPTS/prusaslicer/install.sh && rm -rf $INST_SCRIPTS/prusaslicer/
 
