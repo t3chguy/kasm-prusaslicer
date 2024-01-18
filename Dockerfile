@@ -1,6 +1,11 @@
 FROM lscr.io/linuxserver/webtop:latest
 USER root
 
+ENV STARTUPDIR /dockerstartup
+ENV INST_SCRIPTS $STARTUPDIR/install
+
+######### Customize Container Here ###########
+
 COPY PrusaSlicer $INST_SCRIPTS/prusaslicer/
 RUN bash $INST_SCRIPTS/prusaslicer/install.sh && rm -rf $INST_SCRIPTS/prusaslicer/
 
