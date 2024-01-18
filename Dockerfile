@@ -5,6 +5,7 @@ ENV INST_SCRIPTS $STARTUPDIR/install
 
 ######### Customize Container Here ###########
 
+RUN mkdir /config/Desktop
 RUN apt-get -y update && apt-get -y install wget bzip2 htop qdirstat libgtk-4-dev ffmpeg curl krusader
 
 COPY Czkawka $INST_SCRIPTS/czkawka/

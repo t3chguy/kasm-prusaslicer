@@ -20,7 +20,6 @@ StartupWMClass=czkawka
 Type=Application
 EOL
 chmod +x /usr/share/applications/czkawka.desktop
-mkdir /config/Desktop
 cp /usr/share/applications/czkawka.desktop /config/Desktop/czkawka.desktop
 
 chown 1000:0 /config/Desktop/czkawka.desktop
