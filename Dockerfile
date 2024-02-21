@@ -6,7 +6,7 @@ ENV INST_SCRIPTS /dockerstartup/install
 
 RUN mkdir /config/Desktop && \
     apt-get -y update && \
-    apt-get -y install wget bzip2 htop qdirstat libgtk-4-dev ffmpeg curl krusader kdiff3 kompare xxdiff krename zip p7zip
+    apt-get -y install wget bzip2 htop qdirstat libgtk-4-dev ffmpeg curl krusader kdiff3 kompare xxdiff krename zip p7zip nano
 
 COPY scripts $INST_SCRIPTS/
 RUN run-parts --regex '.*\.sh' $INST_SCRIPTS && rm -rf $INST_SCRIPTS/
