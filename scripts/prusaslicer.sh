@@ -3,7 +3,7 @@ set -ex
 
 curl -SsL https://api.github.com/repos/prusa3d/PrusaSlicer/releases/latest > $TMPDIR/latest.json
 
-declare -A ARCH_MAP=( ["amd64"]="x64" ["arm64"]="arm64")
+declare -A ARCH_MAP=( ["x86_64"]="x64" ["arm64"]="arm64")
 URL=$(curl -SsL https://api.github.com/repos/prusa3d/PrusaSlicer/releases/latest | \
   jq --arg arch "${ARCH_MAP[$(arch)]}" \
   -r '.assets[] | select(.browser_download_url | test("linux-\( $arch )-GTK3.+.tar.bz2$"))| .browser_download_url')
